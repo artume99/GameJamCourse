@@ -8,6 +8,9 @@ public class Bullet : MonoBehaviour
     private bool inAir = false;
     private float duration = 3f;
     private float lastShown;
+
+    [SerializeField]
+    private float speed = 1f;
     
     void Start()
     {
@@ -24,7 +27,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         
-        transform.Translate(Vector3.up*Time.deltaTime);
+        transform.Translate(Vector3.up*Time.deltaTime*speed);
         if (Time.time - lastShown > duration)
         {
             inAir = false;
