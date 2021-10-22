@@ -12,6 +12,9 @@ public class Shooter : MonoBehaviour
     {
         Transform spawn = loc.transform.Find("BulletSpawn");
         Bullet bullet = GameObject.Instantiate(bulletPrefab, spawn.position, spawn.rotation);
+        Vector3 rotation = bullet.transform.rotation.eulerAngles;
+        bullet.transform.rotation = Quaternion.Euler(rotation.x, spawn.eulerAngles.y, rotation.z);
+        
 
     }
 
