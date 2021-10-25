@@ -35,7 +35,6 @@ public class Menu : MonoBehaviour
 
    public void OnAmmoPress()
    {
-      Debug.Log(menuTrigger);
       if (menuTrigger == "Hide")
       {
          menuTrigger = "Show";
