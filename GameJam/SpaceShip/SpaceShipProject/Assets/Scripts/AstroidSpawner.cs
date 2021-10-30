@@ -23,7 +23,8 @@ public class AstroidSpawner : MonoBehaviour
         {
             Random rnd = new Random();
             // pooler.SpawnFromPool("Asteroid", spawnLocations[rnd.Next(0, 4)].position, Quaternion.identity);
-            GameObject asteroid = Instantiate(asteroids[rnd.Next(0, asteroids.Length)], spawnLocations[rnd.Next(0, 3)]);
+            GameObject asteroid = Instantiate(asteroids[rnd.Next(0, asteroids.Length)], spawnLocations[rnd.Next(0, 
+            spawnLocations.Length)]);
             asteroid.transform.localPosition = Vector3.zero;
             timer -= interval;
         }
