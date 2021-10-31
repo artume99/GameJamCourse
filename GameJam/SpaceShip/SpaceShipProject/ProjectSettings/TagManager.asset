@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Sheep
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - 
   - Background
   - Player
-  - 
+  - Som
   - 
   - 
   - 
@@ -44,4 +46,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ui
+    uniqueID: 1177244157
     locked: 0

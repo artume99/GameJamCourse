@@ -29,23 +29,11 @@ public class Portal : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("hi");
         if (other.gameObject.tag == "Player")
         {
             string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
             SceneManager.LoadScene(sceneName);
         }
     }
-    // private void Update()
-    // {
-    //     bx.OverlapCollider(hits);
-    //     for (int i = 0; i < hits.Length; i++)
-    //     {
-    //         if (hits[i] == null)
-    //             continue;
-    //         OnCollide(hits[i]);
-    //         hits[i] = null;
-    //     }
-    //
-    // }
+   
 }

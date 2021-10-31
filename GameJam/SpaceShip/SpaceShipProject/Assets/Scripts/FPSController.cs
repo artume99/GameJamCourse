@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,34 +7,45 @@ public class FPSController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private Rigidbody rg;
-    [SerializeField] private float speed = 40f;
+    [SerializeField] private float speed = 50000f;
+    
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            rg.MovePosition(transform.position + Vector3.left* Time.deltaTime*speed);
+            rg.AddForce(Vector3.left* Time.deltaTime*speed);
             
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            rg.MovePosition(transform.position + Vector3.right* Time.deltaTime*speed);
+            rg.AddForce(Vector3.right* Time.deltaTime*speed);
             
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            rg.MovePosition(transform.position + Vector3.up* Time.deltaTime*speed);
+            rg.AddForce(Vector3.up* Time.deltaTime*speed);
             
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            rg.MovePosition(transform.position + Vector3.down* Time.deltaTime*speed);
+            rg.AddForce(Vector3.down* Time.deltaTime*speed);
             
+        }
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Asteroid asteroid = other.GetComponent<Asteroid>();
+            asteroid.Explode();
         }
     }
 }

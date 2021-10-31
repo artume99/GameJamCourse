@@ -7,7 +7,7 @@ public class CameraMotor : MonoBehaviour
     [SerializeField] private float speed;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
     }
