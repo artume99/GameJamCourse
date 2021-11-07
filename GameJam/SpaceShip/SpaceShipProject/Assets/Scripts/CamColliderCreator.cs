@@ -38,8 +38,9 @@ public class CamColliderCreator : MonoBehaviour
         topCollider.parent = transform;
         bottomCollider.parent = transform;
         rightCollider.parent = transform;
-        leftCollider.parent = transform;
-
+        leftCollider.parent = transform; 
+        
+        // Makes the walls colliders bouncy
         bxTop.sharedMaterial = _material;
         bxBot.sharedMaterial = _material;
         bxR.sharedMaterial = _material;

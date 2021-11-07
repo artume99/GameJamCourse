@@ -13,7 +13,8 @@ public class Menu : MonoBehaviour
     public void UpdateMenu()
     {
         Points.text = GameManager.Instance.GetCurrentPointCount().ToString();
-        Parts.text = GameManager.Instance.GetCurrentPartCount().ToString();
+        Parts.text = GameManager.Instance.GetCurrentPartCount().ToString() + "/" + GameManager.Instance.endLevel.ToString();
+
 
     }
 

@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class SpaceShipPart : MonoBehaviour, IPooledObject
 {
     private SpriteRenderer sr;
-    private int endLevel = 1;
-    private string GameScene = "Game";
     private List<string> allowedToCollect;
 
    

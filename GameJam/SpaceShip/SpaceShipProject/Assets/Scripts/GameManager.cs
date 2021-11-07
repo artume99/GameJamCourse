@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     // GAME STATE
     public int score;
     public int partCollected;
-    private int endLevel = 2;
+    public int endLevel = 5;
     private float transitionTime = 3.2f;
 
     // References
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public Animator transition;
     
     // Resources
-    public Dictionary<string, AudioSource> audio;
+    // public Dictionary<string, AudioSource> audio;
     public Sprite[] SpaceShipParts;
 
     private void Awake()
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         menu.UpdateMenu();
+        // audio = new Dictionary<string, AudioSource>();
     }
 
     private void Update()
@@ -75,11 +76,7 @@ public class GameManager : MonoBehaviour
         return partCollected;
     }
 
-    public void PlaySound(string sound)
-    {
-        AudioSource clip = audio[sound];
-        clip.Play();
-    }
+    
 
     public void LoadNextLevel()
     {

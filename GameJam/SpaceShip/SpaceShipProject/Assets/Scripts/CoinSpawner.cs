@@ -23,8 +23,8 @@ public class CoinSpawner : MonoBehaviour
        pooler = ObjectPooling.Instance;
        toSpawn = new List<KeyValuePair<string, int>>()
        {
+           new KeyValuePair<string, int>("Parts", 5),
            new KeyValuePair<string, int>("3DIA", 20), 
-           new KeyValuePair<string, int>("Parts", 40),
            new KeyValuePair<string, int>("DIA", 80), 
        };  
     }

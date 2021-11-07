@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -872,15 +872,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   partCollected: 0
+  endLevel: 3
   ship: {fileID: 983422050}
   menu: {fileID: 1577807566}
   transition: {fileID: 1229813842}
   SpaceShipParts:
   - {fileID: 21300000, guid: e17fefb25e13fac4b9a5de0f0265e4d1, type: 3}
   - {fileID: 21300000, guid: 3ed2fd553627ed345afba64bea89324c, type: 3}
-  - {fileID: 21300000, guid: 1215e40f8e4aca243872747295250e82, type: 3}
-  - {fileID: 21300000, guid: c5e526e80c47f964a9e5ff653bbb09c5, type: 3}
-  - {fileID: 21300000, guid: 499c532dec6ce494eb2dfd8cf44ce14a, type: 3}
+  - {fileID: 21300000, guid: e3d8a4f1fe4db7d4b9818279dc6b23ea, type: 3}
+  - {fileID: 21300000, guid: 6544b4b616d7f8841a4528728d3e1545, type: 3}
+  - {fileID: 21300000, guid: 8ba5e952cdd937f4495b7fcb257ddeac, type: 3}
 --- !u!4 &743640172
 Transform:
   m_ObjectHideFlags: 0
@@ -1427,13 +1428,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ea23ff065fedf36449d1f0b84a2c1afa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.118
+  m_Volume: 0.18
   m_Pitch: 0.11
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 50
+  Priority: 92
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2413,13 +2414,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 795d3073dcad6594484a98be4554fdac, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.221
+  m_Volume: 0.61
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 160
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2664,7 +2665,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
