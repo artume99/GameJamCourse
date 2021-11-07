@@ -50,10 +50,9 @@ public class CamColliderCreator : MonoBehaviour
         cameraPos = Camera.main.transform.position;
         screenSize.x = Vector2.Distance (Camera.main.ScreenToWorldPoint(new Vector2(0,0)),Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0))) * 0.5f;
         screenSize.y = Vector2.Distance (Camera.main.ScreenToWorldPoint(new Vector2(0,0)),Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height))) * 0.5f;
-        Debug.Log(screenSize);
-        
-       
-    //Change our scale and positions to match the edges of the screen...   
+
+
+        //Change our scale and positions to match the edges of the screen...   
         rightCollider.localScale = new Vector3(colDepth, screenSize.y * 4, colDepth);
         rightCollider.position = new Vector3(cameraPos.x + screenSize.x + (rightCollider.localScale.x * 0.5f), cameraPos.y, zPosition);
         leftCollider.localScale = new Vector3(colDepth, screenSize.y * 4, colDepth);

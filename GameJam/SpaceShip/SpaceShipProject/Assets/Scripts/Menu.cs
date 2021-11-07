@@ -22,11 +22,16 @@ public class Menu : MonoBehaviour
     {
         if (pause)
         {
+            if (GameManager.Instance.currentScene == 0)
+                GameManager.Instance.AudioSources["engine"].Play();
             Time.timeScale = 1;
             pause = false;
         }
         else
         {
+            GameManager.Instance.AudioSources["pause"].Play();
+            if (GameManager.Instance.currentScene == 0)
+                GameManager.Instance.AudioSources["engine"].Stop();
             Time.timeScale = 0;
             pause = true;
         }

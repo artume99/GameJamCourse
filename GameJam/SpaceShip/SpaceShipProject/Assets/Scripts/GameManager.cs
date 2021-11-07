@@ -18,10 +18,19 @@ public class GameManager : MonoBehaviour
     public Ship ship;
     public Menu menu;
     public Animator transition;
+    public int currentScene;
     
     // Resources
-    // public Dictionary<string, AudioSource> audio;
+    public AudioSource sheepSound;
+    public AudioSource pauseSound;
+    public AudioSource engineSound;
+    public AudioSource backgroundSound;
+    public AudioClip runnerBackgroundSound;
+    public AudioClip astroidBackgroundSound;
+    public Dictionary<string, AudioSource> AudioSources;
     public Sprite[] SpaceShipParts;
+    
+    
 
     private void Awake()
     {
@@ -39,7 +48,14 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         menu.UpdateMenu();
-        // audio = new Dictionary<string, AudioSource>();
+        AudioSources = new Dictionary<string, AudioSource>
+        {
+            {"pause",pauseSound},
+            {"sheep", sheepSound},
+            {"engine", engineSound},
+            {"back", backgroundSound}
+        };
+        currentScene = 0;
     }
 
     private void Update()
@@ -80,6 +96,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        currentScene = 1 - currentScene;
+        AudioSources["back"].clip = astroidBackgroundSound;
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 

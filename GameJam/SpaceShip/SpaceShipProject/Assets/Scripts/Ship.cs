@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -7,20 +8,17 @@ public class Ship : MonoBehaviour
 {
     private Vector3 mousePosition;
     [SerializeField] private float moveSpeed = 15f;
-    [SerializeField] private GameObject objectContainer;
     private Rigidbody2D rb;
     private float localX;
  
     // Use this for initialization
     void Start ()
     {
-        localX = objectContainer.transform.position.x - 33f;
         rb = GetComponent<Rigidbody2D>();
     }
    
     // CODE FOR LERPING WITH CONSTANT SPEED
     void FixedUpdate () {
-        localX = objectContainer.transform.position.x - 33f;
         if (true) {
             mousePosition=Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 tmpDir = mousePosition - transform.position;
@@ -42,6 +40,14 @@ public class Ship : MonoBehaviour
             rb.MovePosition (Vector3.Lerp (start, target, t*moveSpeed));
  
             yield return null;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Sheep")
+        {
+            GameManager.Instance.AudioSources["sheep"].Play();
         }
     }
 }
